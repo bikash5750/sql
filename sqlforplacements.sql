@@ -75,3 +75,34 @@ INSERT INTO Title (
 (3, 'Lead', '2016-06-11 00:00:00');
 
 select * from Title;
+
+
+
+
+////dql(DATA QUERY LANGUAGE)
+use org;
+select * from emp;
+select first_name from emp;
+select 44+11;
+select * from emp where salary>80000;
+select* from emp where salary between 200000 and 500000;
+
+-- suppose we want all emp who woker in admin and hr department
+-- faltu way
+select * from emp where department = 'HR' or department = 'admin';
+
+-- better way
+select * from emp where department in ('HR' , 'admin');
+
+-- not operation 
+select * from emp where department not in ('hr');
+
+-- is null and is not null
+select * from emp where salary is not null;
+
+-- wildcard useing %% and like
+-- here we have to get k in betweeen
+select * from emp where first_name like '%k%';
+
+-- any one occurance of character with i
+select * from emp where first_name like '%_i%';
