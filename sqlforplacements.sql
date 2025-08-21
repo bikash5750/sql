@@ -106,3 +106,37 @@ select * from emp where first_name like '%k%';
 
 -- any one occurance of character with i
 select * from emp where first_name like '%_i%';
+
+
+use org;
+select * from emp where salary between 100000 and 500000;
+select * from emp where department in ('HR','admin');
+
+-- sorting on basis of salary(ace)
+select * from emp order by salary;
+
+-- sorting dec
+
+select * from emp order by salary desc;
+
+
+-- uniqne value using distinct
+ select distinct department from emp;
+ 
+ 
+ -- grouping of data(using aggregation function count,sum , sub etc)
+ select department, count(department) from emp group by department;
+ 
+ -- @ what is the avarge salary of each departemnt
+ 
+ select department , avg(salary) from emp group by department;
+ 
+ -- @ per deartment min salary
+ select department , min(salary) from emp group by department;
+ 
+ 
+ -- @ department count haveing more then 2 worker(groupby having)
+ 
+ select department , count(department) from emp group by department having count(department)>2;
+
+ 
