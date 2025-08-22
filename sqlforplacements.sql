@@ -139,4 +139,44 @@ select * from emp order by salary desc;
  
  select department , count(department) from emp group by department having count(department)>2;
 
+ create database exp;
+ use exp;
  
+ create table expe(
+  name varchar(255) not null unique,
+  id int not null primary key,
+  town varchar(255),
+  salary int default 0
+
+ );
+ 
+insert into expe (name, id, town) values
+('Alice', 1, 'Delhi'),
+('Bob', 2, 'Mumbai'),
+('Charlie', 3, 'Bangalore'),
+('David', 4, 'Hyderabad'),
+('Eve', 5, 'Chennai');
+
+select * from expe;
+
+-- @ add new colum
+alter table expe add rating int not null default 0;
+
+select * from expe;
+
+-- @ change data type alter
+alter table expe modify rating double;
+desc expe;
+
+-- @ rename colum
+
+alter table expe rename column town to city ;
+select * from expe;
+
+-- @ drop table
+ alter table expe drop column rating;
+ 
+ select * from expe;
+ 
+ -- @ rename table name
+ alter table expe rename  to details;
