@@ -180,3 +180,34 @@ select * from expe;
  
  -- @ rename table name
  alter table expe rename  to details;
+
+
+ -- @ DML commads
+insert into details (name, id, city) value
+('bikash', 10, 'kharar');
+
+update details set city='delhi'  where id = 10;
+select * from details;
+
+-- @ update multiple rows
+set sql_safe_updates = 0;
+update details set city = 'delhi';
+select * from details;
+
+-- @ delete command
+
+delete from details where id = 10;
+select * from details;
+
+-- @ replace command
+
+replace into details (id,name, city)
+values (3,'bik','kharar');
+select * from details;
+replace into details (id,name, city)
+values (50,'ak','kharar');
+select * from details;
+
+replace into details(id ,name, salary,city)
+select name, city ,id, salary
+from details where id = 3
